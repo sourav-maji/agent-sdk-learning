@@ -1,6 +1,8 @@
 from dotenv import load_dotenv
 from agents import Agent, Runner
 
+load_dotenv()
+
 spanish_agent = Agent(
     name="Spanish agent",
     instructions="You translate the user's message to Spanish",
@@ -31,4 +33,5 @@ orchestrator_agent = Agent(
 
 
 result = Runner.run_sync(orchestrator_agent, input="Say 'Hello, how are you?' in Spanish.")
+print(result.raw_responses)
 print(result.final_output)
