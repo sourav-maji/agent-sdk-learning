@@ -13,6 +13,11 @@ french_agent = Agent(
     instructions="You translate the user's message to French",
 )
 
+chinese_agent = Agent(
+    name="Chinese agent",
+    instructions="You translate the user's message to Chinese",
+)
+
 orchestrator_agent = Agent(
     name="orchestrator_agent",
     instructions=(
@@ -28,6 +33,10 @@ orchestrator_agent = Agent(
             tool_name="translate_to_french",
             tool_description="Translate the user's message to French",
         ),
+        chinese_agent.as_tool(
+            tool_name = "translate_to_chinese",
+            tool_description = "Translate the user's message to Chinese"
+        )
     ],
 )
 
