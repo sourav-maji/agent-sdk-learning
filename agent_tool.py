@@ -17,6 +17,10 @@ chinese_agent = Agent(
     name="Chinese agent",
     instructions="You translate the user's message to Chinese",
 )
+bengali_agent = Agent(
+    name="Bengali agent",
+    instructions="You translate the user's message to Bengali",
+)
 
 orchestrator_agent = Agent(
     name="orchestrator_agent",
@@ -36,6 +40,10 @@ orchestrator_agent = Agent(
         chinese_agent.as_tool(
             tool_name = "translate_to_chinese",
             tool_description = "Translate the user's message to Chinese"
+        ),
+        bengali_agent.as_tool(
+            tool_name = "translate_to_bengali",
+            tool_description = "Translate the user's message to Bengali"
         )
     ],
 )
